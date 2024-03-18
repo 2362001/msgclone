@@ -1,0 +1,148 @@
+.applayout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+
+  .leftnav {
+    height: 100%;
+    padding: 0 1rem;
+    width: 25%;
+
+    .lheader {
+      width: 100%;
+      padding: 15px 0;
+    }
+    .lcontent1 {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      .eachprofile {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        align-items: center;
+        border-radius: 6px;
+        margin-top: 5px;
+
+        .lavatar {
+          height: 56px;
+          width: 56px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid black;
+          background-color: #ccc;
+          position: relative;
+
+          .lavatarActive {
+            content: "";
+            height: 15px;
+            width: 15px;
+            background-color: chartreuse;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
+        }
+        .lcontent {
+          margin-left: 4px;
+          display: flex;
+          flex-direction: column;
+          .labeluser {
+            font-size: 16px;
+            font-weight: 500;
+          }
+
+          .contentMessexxx {
+            font-size: 14px;
+            width: 280px;
+            opacity: 0.7;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &:hover {
+          background-color: beige;
+        }
+      }
+    }
+  }
+
+  .content {
+    height: 100%;
+    width: 50%;
+    overflow-y: scroll;
+    flex-direction: column;
+    position: relative;
+
+    .ctheader {
+      width: 100%;
+      height: 60px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+
+      .cthl {
+        display: flex;
+        align-items: center;
+
+        .ctusername {
+          margin-left: 4px;
+          font-size: 22px;
+          font-weight: 600;
+        }
+        .cthlct {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          content: "";
+          border: 1px solid #ccc;
+          background-color: #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .cthr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 25px;
+      }
+    }
+    .ctcontent {
+    }
+    .ctft {
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #ccc;
+      padding: 10px 0;
+      justify-content: space-between;
+
+      .ctft1 {
+        display: flex;
+        width: auto
+      }
+      .ctft2 {
+        width: 80%;
+      }
+    }
+  }
+  .rightnav {
+    height: 100%;
+    width: 25%;
+  }
+}
