@@ -1,22 +1,27 @@
-import { ReactNode, createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { ReactNode, createContext } from "react";
 
-export interface IUserContext {
-  children: ReactNode;
+interface IAccountContext {
+  user?: {
+    loggedIn: boolean;
+    token: string | null;
+  };
+  setUser: React.Dispatch<
+    React.SetStateAction<{
+      loggedIn: boolean;
+      token: string | null;
+    }>
+  >;
 }
-export const AccountContext = createContext();
-const UserContext = ({ children }: IUserContext) => {
-  const [user, setUser] = useState({
-    loggedIn: null,
-    token: localStorage.getItem("token"),
-  });
-  const navigate = useNavigate();
+interface IUserContext {
+  children: ReactNode;
+  value: IAccountContext;
+}
+const AccountContext = createContext<IAccountContext | undefined>(undefined);
 
+const UserContextProvider: React.FC<IUserContext> = ({ children, value }) => {
   return (
-    <AccountContext.Provider value={{ user, setUser }}>
-      {children}
-    </AccountContext.Provider>
+    <AccountContext.Provider value={value}>{children}</AccountContext.Provider>
   );
 };
 
-export default UserContext;
+export { AccountContext, UserContextProvider };
